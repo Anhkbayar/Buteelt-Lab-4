@@ -10,7 +10,6 @@ import java.util.Scanner;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -64,14 +63,23 @@ public class IntQueueTest {
 
     @Test
     public void testPeekEmptyQueue() {
-        // TODO: write your own unit test
-        fail("Test not implemented");
+        // Done I guess
+        assertEquals(null, mQueue.peek());
+        // fail("Test not implemented");
     }
 
     @Test
     public void testPeekNoEmptyQueue() {
         // TODO: write your own unit test
-        fail("Test not implemented");
+        for (int i = 0; i < testList.size(); i++) {
+            mQueue.enqueue(testList.get(i));
+
+        }
+        assertEquals(1, (int) mQueue.peek());
+        assertEquals(3, mQueue.size());
+        assertEquals(1, (int) mQueue.peek());
+
+        // fail("Test not implemented");
     }
 
     @Test
@@ -86,8 +94,18 @@ public class IntQueueTest {
 
     @Test
     public void testDequeue() {
-        // TODO: write your own unit test
-        fail("Test not implemented");
+        // done i believe
+        for (int i = 0; i < testList.size(); i++) {
+            mQueue.enqueue(testList.get(i));
+        }
+        assertEquals(1, (int) mQueue.dequeue());
+        assertEquals(2, (int) mQueue.peek());
+        assertEquals(2, (int) mQueue.size());
+
+        mQueue.clear();
+        assertEquals(null, mQueue.dequeue());
+
+        // fail("Test not implemented");
     }
 
     @Test

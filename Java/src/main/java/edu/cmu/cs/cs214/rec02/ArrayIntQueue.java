@@ -93,6 +93,9 @@ public class ArrayIntQueue implements IntQueue {
      */
     @Override
     public Integer peek() {
+        if (isEmpty()) {
+            return null;
+        }
         return elementData[head];
     }
 
