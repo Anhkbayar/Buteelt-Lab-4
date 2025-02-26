@@ -70,7 +70,7 @@ public class IntQueueTest {
 
     @Test
     public void testPeekNoEmptyQueue() {
-        // TODO: write your own unit test
+        // 100%
         for (int i = 0; i < testList.size(); i++) {
             mQueue.enqueue(testList.get(i));
 
@@ -106,6 +106,17 @@ public class IntQueueTest {
         assertEquals(null, mQueue.dequeue());
 
         // fail("Test not implemented");
+    }
+
+    @Test
+    public void testEnsure() {
+        for (int i = 1; i <= 10; i++) {
+            mQueue.enqueue(i);
+        }
+        mQueue.enqueue(11);
+
+        assertEquals(11, mQueue.size());
+        assertEquals(1, (int) mQueue.peek());
     }
 
     @Test
